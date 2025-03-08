@@ -44,7 +44,7 @@
         align-items: center;
         z-index: 9999;
         background-color: #ffffff;
-        transition: opacity 0.1s ease-out;
+        transition: opacity 0.2s ease-out;
     }
     
     .wall-container {
@@ -70,7 +70,7 @@
         letter-spacing: 2px;
         margin-top: -100px;
         opacity: 0;
-        animation: fadeIn 0.2s ease-out forwards 0.2s;
+        animation: fadeIn 0.2s ease-out forwards 0.5s;
     }
     
     .progress-bar {
@@ -89,7 +89,7 @@
         height: 100%;
         width: 0;
         background-color: #ff7300;
-        animation: progress 1s linear forwards 1s;
+        animation: progress 2s linear forwards;
     }
     
     @keyframes fadeIn {
@@ -160,60 +160,20 @@
         }
     }
 
-    /*Star testimonial*/
-
-.testimonial {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-.testimonial-card {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.testimonial-banner {
-  border-radius: 50%;
-}
-
-.testimonial-name {
-  font-weight: bold;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.testimonial-title {
-  font-size: 14px;
-  color: gray;
-}
-
-.rating {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.star-icon {
-  margin: 0 2px;
-}
-
-.quotation-img {
-  margin-top: 10px;
-}
-
-.testimonial-desc {
-  font-size: 14px;
-  color: #555;
-  text-align: center;
-  margin-top: 12px;
-}
-
-
+    .map-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* Proporção 16:9 */
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
   </style>
 
 </head>
@@ -1980,7 +1940,7 @@
           <div class="testimonial">
             <h2 class="title">Feedback</h2>
             <div class="testimonial-card">
-              <img src="./assets/images/icons/img.png" alt="" class="testimonial-banner" width="80" height="80">
+              <img src="./assets/images/img.png" alt="" class="testimonial-banner" width="80" height="80">
               <p class="testimonial-name">Cliente1</p>
               <p class="testimonial-title">Construtora...</p>
               
@@ -2233,9 +2193,16 @@
 
   </main>
 
+  <!--Google Review-->
+  <div class="tagembed-widget" style="width:100%;height:100%" 
+  data-widget-id="2157913" data-tags="false"  view-url="https://widget.tagembed.com/2157913">
+  </div><script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
 
-
-
+    <!--maps-->
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10677.317260676009!2d-41.96138627293208!3d-18.887004878536562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb1a7d9056ea4b1%3A0x4d101722c3a5cdb1!2sGV%20BLOCOS%20E%20PREMOLDADOS!5e0!3m2!1sen!2sbr!4v1741456601863!5m2!1sen!2sbr" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
 
   <!--
     - FOOTER
@@ -2529,7 +2496,7 @@
         const brickWidth = 50;
         const brickHeight = 25;
         const totalBricks = rows * bricksPerRow;
-        const loadingDuration = 5000; // 5 segundos
+        const loadingDuration = 2000; // 5 segundos
         
         // Criar os blocos da parede
         let brickIndex = 0;
